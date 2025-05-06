@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>اخبار و اطلاعیه‌ها | هنرستان دکتر اکبریه</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="icon" href="images\lego.png">
+    <style>
+        .news-filters {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+            margin-bottom: 30px;
+        }
+        
+        .filter-group {
+            margin-bottom: 15px;
+        }
+        
+        .filter-control {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            font-size: 1rem;
+        }
+        
+        .news-featured {
+            grid-column: 1 / -1;
+            display: flex;
+            margin-bottom: 30px;
+        }
+        
+        .news-featured .card-img {
+            flex: 1;
+            height: auto;
+        }
+        
+        .news-featured .card-body {
+            flex: 1;
+            padding: 40px;
+        }
+        
+        .news-category {
+            background: var(--primary);
+            color: white;
+            padding: 3px 10px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+        
+        .pagination {
+            display: flex;
+            justify-content: center;
+            margin-top: 40px;
+        }
+        
+        .page-link {
+            display: inline-block;
+            padding: 8px 15px;
+            margin: 0 5px;
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            transition: var(--transition);
+        }
+        
+        .page-link:hover, .page-link.active {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+        }
+        
+        @media (max-width: 768px) {
+            .news-featured {
+                flex-direction: column;
+            }
+        }
+        /* استایل صفحه لودینگ */
+        #loading {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            z-index: 9999;
+            transition: opacity 0.5s ease;
+        }
+        
+        .loader {
+            border: 5px solid #f3f3f3;
+            border-top: 5px solid #3498db;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            animation: spin 1s linear infinite;
+            margin-bottom: 15px;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        /* محتوای اصلی که ابتدا مخفی است */
+        #main-content {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+            <!-- صفحه لودینگ -->
+            <div id="loading">
+                <div class="loader"></div>
+                <p>لطفا صبر کنید...</p>
+            </div>
+        
+            <!-- محتوای اصلی -->
+            <div id="main-content">
+    <!-- هدر -->
+    <header class="header">
+        <div class="container header-container">
+            <div class="logo">
+                <img src="images\lego.png" alt="هنرستان دکتر اکبریه">
+                <div class="logo-text">
+                    <h1>هنرستان فنی و حرفه ای دکتر اکبریه</h1>
+                </div>
+            </div>
+            
+            <i class="fas fa-bars menu-toggle"></i>
+            
+            <nav class="nav">
+                <ul class="nav-list">
+                    <li><a href="index.html" class="nav-link">صفحه اصلی</a></li>
+                    <li><a href="about.html" class="nav-link">درباره ما</a></li>
+                    <li><a href="facilities.html" class="nav-link">امکانات</a></li>
+                    <li><a href="courses.html" class="nav-link">رشته‌ها</a></li>
+                    <li><a href="news.html" class="nav-link active">اخبار</a></li>
+                    <li><a href="contact.html" class="nav-link">تماس</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- محتوای صفحه اخبار -->
+    <main>
+        <section class="section">
+            <div class="container">
+                <h2 class="section-title">اخبار و اطلاعیه‌ها</h2>
+
+                <div class="grid">
+                    <div class="grid grid-auto">
+
+                        <div class="card">
+
+                            <div class="card-body">
+                                <span class="news-category">دستاوردها</span>
+                                <div class="news-meta">
+                                    <i class="far fa-calendar-alt"></i>
+                                    <span>۱۴۰۳/۰۹/۱۰</span>
+                                </div>
+                                <h4>کسب مقام اول درمسابقه فوتسال</h4>
+                                <p>تیم دانش‌آموزی هنرستان دکتر اکبریه در مسابقات فوتسال بین مدارس مقام اول را کسب کرد.</p>
+                            </div>
+                        </div><br>
+                        
+                        <div class="card">
+
+                            <div class="card-body">
+                                <span class="news-category">اخبار آموزشی</span>
+                                <div class="news-meta">
+                                    <i class="far fa-calendar-alt"></i>
+                                    <span>۱۴۰۲/۰۵/۲۰</span>
+                                </div>
+                                <h4>افتخارآفرینی دانش‌آموزان در مسابقات علمی</h4>
+                                <p>تیم دانش‌آموزی هنرستان دکتر اکبریه در مسابقات علمی استانی مقام اول را کسب کرد.</p>
+                            </div>
+                        </div><br>
+                        
+                        <div class="card">
+
+                            <div class="card-body">
+                                <span class="news-category">رویدادها</span>
+                                <div class="news-meta">
+                                    <i class="far fa-calendar-alt"></i>
+                                    <span>۱۴۰۲/۰۵/۱۸</span>
+                                </div>
+                                <h4>برگزاری کارگاه آموزشی برنامه‌نویسی</h4>
+                                <p>کارگاه آموزشی برنامه‌نویسی  برای دانش‌آموزان رشته کامپیوتر برگزار خواهد شد.</p>
+                            </div>
+                        </div><br>
+                        
+                        <div class="card">
+
+                            <div class="card-body">
+                                <span class="news-category">دستاوردها</span>
+                                <div class="news-meta">
+                                    <i class="far fa-calendar-alt"></i>
+                                    <span>۱۴۰۲/۰۵/۱۵</span>
+                                </div>
+                                <h4>رتبه برتر هنرستان در ارزیابی عملکرد</h4>
+                                <p>هنرستان دکتر اکبریه در ارزیابی سالانه هنرستان‌های فنی و حرفه‌ای استان، رتبه اول را کسب کرد.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="pagination">
+                    <a href="#" class="page-link"><i class="fas fa-angle-right"></i></a>
+                    <a href="#" class="page-link active">1</a>
+                    <a href="#" class="page-link">2</a>
+                    <a href="#" class="page-link">3</a>
+                    <a href="#" class="page-link"><i class="fas fa-angle-left"></i></a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- فوتر -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-about">
+                    <div class="footer-logo">
+                        <img src="images\lego.png" alt="هنرستان دکتر اکبریه">
+                    </div>
+                    <p>هنرستان دکتر اکبریه با بیش از ۲۰ سال سابقه درخشان در تربیت نیروهای متخصص و کارآمد، یکی از بهترین مراکز آموزشی فنی و حرفه‌ای در تبریز است.</p>
+                </div>
+                
+                <div class="footer-links">
+                    <h3>لینک‌های سریع</h3>
+                    <ul>
+                        <li><a href="index.html">صفحه اصلی</a></li>
+                        <li><a href="about.html">درباره ما</a></li>
+                        <li><a href="facilities.html">امکانات آموزشی</a></li>
+                        <li><a href="courses.html">رشته‌ها و دوره‌ها</a></li>
+                        <li><a href="news.html">اخبار و اطلاعیه‌ها</a></li>
+                        <li><a href="contact.html">تماس با ما</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-contact">
+                    <h3>اطلاعات تماس</h3>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt contact-icon"></i>
+                        <p>تبریز، میدان کاه‌فروشان، کوچه سید ابراهیم  </p>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone contact-icon"></i>
+                        <p>041-35247208</p>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope contact-icon"></i>
+                        <p>Faniherfeiakbariye@Gmail.com</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>  © هنرستان فنی و حرفه ای دکتر اکبریه </p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script>
+        // وقتی صفحه کاملا بارگذاری شد
+        window.addEventListener('load', function() {
+            // پس از 1 ثانیه (برای نمایش بهتر) صفحه لودینگ را محو می‌کنیم
+            setTimeout(function() {
+                var loading = document.getElementById('loading');
+                loading.style.opacity = '0';
+                
+                // نمایش محتوای اصلی
+                document.getElementById('main-content').style.display = 'block';
+                
+                // بعد از اتمام انیمیشن محو شدن، صفحه لودینگ را حذف می‌کنیم
+                setTimeout(function() {
+                    loading.style.display = 'none';
+                }, 500);
+            }, 1000);
+        });
+    </script>
+</body>
+</html>

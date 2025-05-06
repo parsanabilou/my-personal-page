@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>امکانات آموزشی | هنرستان دکتر اکبریه</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="icon" href="images\lego.png">
+    <style>
+        .facility-detail {
+            margin-bottom: 40px;
+        }
+        
+        .facility-content {
+            display: flex;
+            gap: 30px;
+            margin-bottom: 20px;
+        }
+        
+        .facility-text, .facility-image {
+            flex: 1;
+        }
+        
+        .facility-image img {
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+        }
+        
+        .equipment-list {
+            background: var(--light);
+            padding: 20px;
+            border-radius: 8px;
+        }
+        
+        .equipment-list h3 {
+            margin-bottom: 15px;
+        }
+        
+        .equipment-list ul {
+            columns: 2;
+            list-style: none;
+        }
+        
+        .equipment-list li {
+            margin-bottom: 10px;
+            position: relative;
+            padding-right: 25px;
+        }
+        
+        .equipment-list li:before {
+            content: '\f00c';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            color: var(--success);
+            position: absolute;
+            right: 0;
+        }
+        
+        @media (max-width: 768px) {
+            .facility-content {
+                flex-direction: column;
+            }
+            
+            .equipment-list ul {
+                columns: 1;
+            }
+        }
+        /* استایل صفحه لودینگ */
+        #loading {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            z-index: 9999;
+            transition: opacity 0.5s ease;
+        }
+        
+        .loader {
+            border: 5px solid #f3f3f3;
+            border-top: 5px solid #3498db;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            animation: spin 1s linear infinite;
+            margin-bottom: 15px;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        /* محتوای اصلی که ابتدا مخفی است */
+        #main-content {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+        <!-- صفحه لودینگ -->
+        <div id="loading">
+            <div class="loader"></div>
+            <p>لطفا صبر کنید...</p>
+        </div>
+    
+        <!-- محتوای اصلی -->
+        <div id="main-content">
+    <!-- هدر -->
+    <header class="header">
+        <div class="container header-container">
+            <div class="logo">
+                <img src="images\lego.png" alt="هنرستان دکتر اکبریه">
+                <div class="logo-text">
+                    <h1>هنرستان فنی و حرفه ای  دکتر اکبریه</h1>
+                </div>
+            </div>
+            
+            <i class="fas fa-bars menu-toggle"></i>
+            
+            <nav class="nav">
+                <ul class="nav-list">
+                    <li><a href="index.html" class="nav-link">صفحه اصلی</a></li>
+                    <li><a href="about.html" class="nav-link">درباره ما</a></li>
+                    <li><a href="facilities.html" class="nav-link active">امکانات</a></li>
+                    <li><a href="courses.html" class="nav-link">رشته‌ها</a></li>
+                    <li><a href="news.html" class="nav-link">اخبار</a></li>
+                    <li><a href="contact.html" class="nav-link">تماس</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- محتوای صفحه امکانات -->
+    <main>
+        <section class="section">
+            <div class="container">
+                <h2 class="section-title">امکانات آموزشی هنرستان</h2>
+                
+                <div class="facility-detail">
+                    <h3>کلاس‌های هوشمند</h3>
+                    <div class="facility-content">
+                        <div class="facility-text">
+                            <p>هنرستان دکتر اکبریه مجهز به ۱۵ کلاس هوشمند با آخرین تکنولوژی‌های آموزشی است. هر کلاس دارای ویدئو پروژکتور سیستم صوتی پیشرفته و اتصال به اینترنت پرسرعت می‌باشد.</p>
+                            <p>این سیستم‌ها به معلمان امکان می‌دهد تا با استفاده از محتوای چندرسانه‌ای، آموزش را جذاب‌تر و مؤثرتر ارائه دهند. دانش‌آموزان نیز می‌توانند از طریق تبلت‌های آموزشی با محتوای درسی تعامل داشته باشند.</p>
+                        </div>
+                        <div class="facility-image">
+                            <img src="images/Screenshot 2025-04-11 194532.png" alt="کلاس هوشمند">
+                        </div>
+                    </div>
+                    <div class="equipment-list">
+                        <h3>تجهیزات موجود در هر کلاس:</h3>
+                        <ul>
+                            <li>ویدئو پروژکتور Full HD</li>
+                            <li>سیستم صوتی با میکروفون بی‌سیم</li>
+                            <li>کامپیوتر آموزشی با مشخصات بالا</li>
+                            <li>اتصال اینترنت پرسرعت</li>
+                            <li>سیستم تهویه مطبوع</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="facility-detail">
+                    <h3>آزمایشگاه‌های تخصصی</h3>
+                    <div class="facility-content">
+                        <div class="facility-text">
+                            <p>هنرستان دارای ۵ آزمایشگاه تخصصی در رشته‌های برق، الکترونیک، مکانیک و کامپیوتر است. این آزمایشگاه‌ها با جدیدترین تجهیزات روز دنیا مجهز شده‌اند تا دانش‌آموزان بتوانند به صورت عملی با مفاهیم درسی آشنا شوند.</p>
+                            <p>هر آزمایشگاه تحت نظارت مربیان مجرب و با رعایت کامل استانداردهای ایمنی اداره می‌شود. دانش‌آموزان در طول ترم‌های مختلف از این آزمایشگاه‌ها برای انجام پروژه‌های عملی و تحقیقاتی استفاده می‌کنند.</p>
+                        </div>
+                        <div class="facility-image">
+                            <img src="images\Screenshot 2025-04-11 194131.png" alt="آزمایشگاه">
+                        </div>
+                    </div>
+                    <div class="equipment-list">
+                        <h3>تجهیزات اصلی آزمایشگاه‌ها:</h3>
+                        <ul>
+                            <li>آزمایشگاه الکترونیک: اسیلوسکوپ، منبع تغذیه، مولتی‌متر دیجیتال</li>
+                            <li>آزمایشگاه برق: ترانسفورماتور، موتورهای الکتریکی، تابلوهای کنترل</li>
+                            <li>آزمایشگاه کامپیوتر: کامپیوترهای با مشخصات بالا، سرور آموزشی</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- فوتر -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-about">
+                    <div class="footer-logo">
+                        <img src="images\lego.png" alt="هنرستان دکتر اکبریه">
+                    </div>
+                    <p>هنرستان فنی و حرفه ای دکتر اکبریه با بیش از ۲۰ سال سابقه درخشان در تربیت نیروهای متخصص و کارآمد، یکی از بهترین مراکز آموزشی فنی و حرفه‌ای در تبریز است.</p>
+                </div>
+                
+                <div class="footer-links">
+                    <h3>لینک‌های سریع</h3>
+                    <ul>
+                        <li><a href="index.html">صفحه اصلی</a></li>
+                        <li><a href="about.html">درباره ما</a></li>
+                        <li><a href="facilities.html">امکانات آموزشی</a></li>
+                        <li><a href="courses.html">رشته‌ها و دوره‌ها</a></li>
+                        <li><a href="news.html">اخبار و اطلاعیه‌ها</a></li>
+                        <li><a href="contact.html">تماس با ما</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-contact">
+                    <h3>اطلاعات تماس</h3>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt contact-icon"></i>
+                        <p>تبریز، میدان کاه‌فروشان، کوچه سید ابراهیم</p>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone contact-icon"></i>
+                        <p>041-35247208</p>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope contact-icon"></i>
+                        <p>Faniherfeiakbariye@Gmail.com</p>
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>© هنرستان فنی و حرفه ای دکتر اکبریه </p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script>
+        // وقتی صفحه کاملا بارگذاری شد
+        window.addEventListener('load', function() {
+            // پس از 1 ثانیه (برای نمایش بهتر) صفحه لودینگ را محو می‌کنیم
+            setTimeout(function() {
+                var loading = document.getElementById('loading');
+                loading.style.opacity = '0';
+                
+                // نمایش محتوای اصلی
+                document.getElementById('main-content').style.display = 'block';
+                
+                // بعد از اتمام انیمیشن محو شدن، صفحه لودینگ را حذف می‌کنیم
+                setTimeout(function() {
+                    loading.style.display = 'none';
+                }, 500);
+            }, 1000);
+        });
+    </script>
+</body>
+</html>

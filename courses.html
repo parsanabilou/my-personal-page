@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>رشته‌های آموزشی | هنرستان دکتر اکبریه</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="icon" href="images\lego.png">
+    <style>
+        .course-category {
+            margin-bottom: 50px;
+        }
+        
+        .requirements {
+            background: var(--light);
+            padding: 30px;
+            border-radius: 8px;
+            margin-top: 40px;
+        }
+        
+        .requirements h3 {
+            margin-bottom: 20px;
+            color: var(--dark);
+        }
+        
+        .requirements ul {
+            columns: 2;
+            list-style: none;
+        }
+        
+        .requirements li {
+            margin-bottom: 10px;
+            position: relative;
+            padding-right: 25px;
+        }
+        
+        .requirements li:before {
+            content: '\f058';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            color: var(--success);
+            position: absolute;
+            right: 0;
+        }
+        
+        .course-meta {
+            display: flex;
+            justify-content: space-between;
+            margin: 15px 0;
+            color: var(--gray);
+        }
+        
+        .course-meta i {
+            margin-left: 8px;
+        }
+        
+        @media (max-width: 768px) {
+            .requirements ul {
+                columns: 1;
+            }
+        }
+        /* استایل صفحه لودینگ */
+        #loading {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            z-index: 9999;
+            transition: opacity 0.5s ease;
+        }
+        
+        .loader {
+            border: 5px solid #f3f3f3;
+            border-top: 5px solid #3498db;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            animation: spin 1s linear infinite;
+            margin-bottom: 15px;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        /* محتوای اصلی که ابتدا مخفی است */
+        #main-content {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+            <!-- صفحه لودینگ -->
+            <div id="loading">
+                <div class="loader"></div>
+                <p>لطفا صبر کنید...</p>
+            </div>
+        
+            <!-- محتوای اصلی -->
+            <div id="main-content">
+    <!-- هدر -->
+    <header class="header">
+        <div class="container header-container">
+            <div class="logo">
+                <img src="images\lego.png" alt="هنرستان دکتر اکبریه">
+                <div class="logo-text">
+                    <h1>هنرستان فنی و حرفه ای  دکتر اکبریه</h1>
+                </div>
+            </div>
+            
+            <i class="fas fa-bars menu-toggle"></i>
+            
+            <nav class="nav">
+                <ul class="nav-list">
+                    <li><a href="index.html" class="nav-link">صفحه اصلی</a></li>
+                    <li><a href="about.html" class="nav-link">درباره ما</a></li>
+                    <li><a href="facilities.html" class="nav-link">امکانات</a></li>
+                    <li><a href="courses.html" class="nav-link active">رشته‌ها</a></li>
+                    <li><a href="news.html" class="nav-link">اخبار</a></li>
+                    <li><a href="contact.html" class="nav-link">تماس</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- محتوای صفحه رشته‌ها -->
+    <main>
+        <section class="section">
+            <div class="container">
+                <h2 class="section-title">رشته‌های آموزشی هنرستان</h2>
+                
+                <div class="course-category">
+                    <h3>رشته‌های فنی و حرفه‌ای</h3>
+                    <div class="grid grid-auto">
+                        <div class="card">
+
+                            <div class="card-body">
+                                <h4 class="card-title">الکتروتکنیک</h4>
+                                <div class="course-meta">
+                                    <span><i class="far fa-clock"></i> ۳ ساله</span>
+                                    <span><i class="fas fa-user-graduate"></i> ۳۰ نفر</span>
+                                </div>
+                                <p>رشته الکتروتکنیک به آموزش مباحث تخصصی در زمینه طراحی، نصب و نگهداری سیستم‌های الکتریکی می‌پردازد.</p>
+                            </div>
+                        </div><br>
+                        
+                        <div class="card">
+
+                            <div class="card-body">
+                                <h4 class="card-title">شبکه و نرم افزار - نرم‌افزار</h4>
+                                <div class="course-meta">
+                                    <span><i class="far fa-clock"></i> ۳ ساله</span>
+                                    <span><i class="fas fa-user-graduate"></i> ۳۵ نفر</span>
+                                </div>
+                                <p>آموزش برنامه‌نویسی، طراحی وب، پایگاه داده و سایر مهارت‌های مورد نیاز در حوزهشبکه و نرم‌افزار.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">معماری</h4>
+                        <div class="course-meta">
+                            <span><i class="far fa-clock"></i> ۳ ساله</span>
+                            <span><i class="fas fa-user-graduate"></i> ۳۵ نفر</span>
+                        </div>
+                        <p>آموزش طراحی معماری داخلی، مبانی نقشه کشی، شناخت مواد و مصالح  و سایر مهارت‌های مورد نیاز در حوزه طراحی داخلی ساختمان</p>
+                    </div>
+                </div><br>
+                <div class="card">
+
+                    <div class="card-body">
+                        <h4 class="card-title">حسابداری</h4>
+                        <div class="course-meta">
+                            <span><i class="far fa-clock"></i> ۳ ساله</span>
+                            <span><i class="fas fa-user-graduate"></i> ۳۵ نفر</span>
+                        </div>
+                        <p>رشته حسابداری یکی از محبوب و کاربردی است که دروس حسابداری مالی،حسابداری صنعتی و مدیریت مالی و.. را در شاخه حسابداری تخصصصی آموزش داده میشود </p>
+                    </div>
+                </div><br>
+              
+                <div class="card">
+
+                    <div class="card-body">
+                        <h4 class="card-title">تربیت بدنی</h4>
+                        <div class="course-meta">
+                            <span><i class="far fa-clock"></i> ۳ ساله</span>
+                            <span><i class="fas fa-user-graduate"></i> ۳۵ نفر</span>
+                        </div>
+                        <p> دروس رشته تربیت بدنی در زمینه روانشناسی عمومی،تغذیه و بهداشت مواد غذایی همچنین مربیگری آموزش دیده میشوند</p>
+                    </div>
+                </div>
+
+                
+                <div class="requirements">
+                    <h3>شرایط ثبت‌ نام در رشته‌های فنی و حرفه‌ای:</h3>
+                    <ul>
+                        <li>تکمیل فرم ثبت‌نام و پرداخت هزینه</li>
+                        <li>حداقل مدرک تحصیلی: سوم راهنمایی</li>
+                        <li>شرکت در مصاحبه و آزمون ورودی</li>
+                        <li>تعهد به رعایت مقررات آموزشی هنرستان</li>
+                        <li>ارائه مدارک هویتی و تحصیلی</li>
+                        <li>پرداخت شهریه در موعد مقرر</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- فوتر -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-about">
+                    <div class="footer-logo">
+                        <img src="images\lego.png" alt="هنرستان دکتر اکبریه">
+                    </div>
+                    <p>هنرستان  دکتر اکبریه با بیش از ۲۰ سال سابقه درخشان در تربیت نیروهای متخصص و کارآمد، یکی از بهترین مراکز آموزشی فنی و حرفه‌ای در تبریز است.</p>
+                </div>
+                
+                <div class="footer-links">
+                    <h3>لینک‌های سریع</h3>
+                    <ul>
+                        <li><a href="index.html">صفحه اصلی</a></li>
+                        <li><a href="about.html">درباره ما</a></li>
+                        <li><a href="facilities.html">امکانات آموزشی</a></li>
+                        <li><a href="courses.html">رشته‌ها و دوره‌ها</a></li>
+                        <li><a href="news.html">اخبار و اطلاعیه‌ها</a></li>
+                        <li><a href="contact.html">تماس با ما</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-contact">
+                    <h3>اطلاعات تماس</h3>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt contact-icon"></i>
+                        <p>تبریز، میدان کاه‌فروشان، کوچه سید ابراهیم </p>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone contact-icon"></i>
+                        <p>041-35247208</p>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope contact-icon"></i>
+                        <p>Faniherfeiakbariye@Gmail.com</p>
+                    </div>
+                    
+
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>© هنرستان نمونه دولتی دکتر اکبریه </p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script>
+        // وقتی صفحه کاملا بارگذاری شد
+        window.addEventListener('load', function() {
+            // پس از 1 ثانیه (برای نمایش بهتر) صفحه لودینگ را محو می‌کنیم
+            setTimeout(function() {
+                var loading = document.getElementById('loading');
+                loading.style.opacity = '0';
+                
+                // نمایش محتوای اصلی
+                document.getElementById('main-content').style.display = 'block';
+                
+                // بعد از اتمام انیمیشن محو شدن، صفحه لودینگ را حذف می‌کنیم
+                setTimeout(function() {
+                    loading.style.display = 'none';
+                }, 500);
+            }, 1000);
+        });
+    </script>
+</body>
+</html>

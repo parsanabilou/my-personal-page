@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تماس با ما | هنرستان دکتر اکبریه</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="icon" href="images/lego.png">
+    <style>
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        
+        .contact-info-box, .contact-form-box {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 20px;
+        }
+        
+        .contact-icon {
+            margin-left: 15px;
+            color: var(--secondary);
+            font-size: 1.2rem;
+            margin-top: 3px;
+        }
+        
+        .map-container {
+            height: 400px;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            margin-top: 20px;
+        }
+        
+        .error-message {
+            color: red;
+            font-size: 0.8rem;
+            margin-top: 5px;
+            display: none;
+        }
+        
+        .form-group.error input,
+        .form-group.error textarea,
+        .form-group.error select {
+            border-color: red;
+        }
+        
+        @media (max-width: 768px) {
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+        }
+        /* استایل صفحه لودینگ */
+        #loading {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            z-index: 9999;
+            transition: opacity 0.5s ease;
+        }
+        
+        .loader {
+            border: 5px solid #f3f3f3;
+            border-top: 5px solid #3498db;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            animation: spin 1s linear infinite;
+            margin-bottom: 15px;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        /* محتوای اصلی که ابتدا مخفی است */
+        #main-content {
+            display: none;
+        }
+        .char-counter {
+        font-size: 0.8rem;
+        color: #666;
+        text-align: left;
+        margin-top: 5px;
+    }
+    
+    .char-counter.warning {
+        color: orange;
+    }
+    
+    .char-counter.error {
+        color: red;
+    }
+    </style>
+</head>
+<body>
+            <!-- صفحه لودینگ -->
+            <div id="loading">
+                <div class="loader"></div>
+                <p>لطفا صبر کنید...</p>
+            </div>
+        
+            <!-- محتوای اصلی -->
+            <div id="main-content">
+    <!-- هدر -->
+    <header class="header">
+        <div class="container header-container">
+            <div class="logo">
+                <img src="images/lego.png" alt="هنرستان دکتر اکبریه">
+                <div class="logo-text">
+                    <h1>هنرستان فنی و حرفه ای دکتر اکبریه</h1>
+                </div>
+            </div>
+            
+            <i class="fas fa-bars menu-toggle"></i>
+            
+            <nav class="nav">
+                <ul class="nav-list">
+                    <li><a href="index.html" class="nav-link">صفحه اصلی</a></li>
+                    <li><a href="about.html" class="nav-link">درباره ما</a></li>
+                    <li><a href="facilities.html" class="nav-link">امکانات</a></li>
+                    <li><a href="courses.html" class="nav-link">رشته‌ها</a></li>
+                    <li><a href="news.html" class="nav-link">اخبار</a></li>
+                    <li><a href="contact.html" class="nav-link active">تماس</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- محتوای صفحه تماس -->
+    <main>
+        <section class="section">
+            <div class="container">
+                <h2 class="section-title">تماس با هنرستان</h2>
+                
+                <div class="contact-container">
+                    <div class="contact-info-box">
+                        <h3>اطلاعات تماس</h3>
+                        
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt contact-icon"></i>
+                            <div>
+                                <h4>آدرس هنرستان</h4>
+                                <p>تبریز، میدان کاه‌فروشان، کوچه سید ابراهیم</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <i class="fas fa-phone contact-icon"></i>
+                            <div>
+                                <h4>تلفن تماس</h4>
+                                <p>(041)35247208</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <i class="fas fa-envelope contact-icon"></i>
+                            <div>
+                                <h4>پست الکترونیک</h4>
+                                <p>Faniherfeiakbariye@Gmail.com</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <i class="fas fa-clock contact-icon"></i>
+                            <div>
+                                <h4>ساعات کاری</h4>
+                                <p>شنبه تا چهارشنبه: ۷:۳۰ صبح تا ۱۴:۳۰ بعدازظهر</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-form-box">
+                        <h3>فرم تماس با ما</h3>
+                        <form id="contactForm">
+                            <div class="form-group">
+                                <label for="contactName" class="form-label required">نام و نام خانوادگی</label>
+                                <input type="text" id="contactName" class="form-control" required>
+                                <div class="error-message" id="nameError">لطفاً نام و نام خانوادگی معتبر وارد کنید (فقط حروف فارسی و انگلیسی)</div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="contactEmail" class="form-label required">پست الکترونیک</label>
+                                <input type="email" id="contactEmail" class="form-control" required>
+                                <div class="error-message" id="emailError">لطفاً یک آدرس ایمیل معتبر وارد کنید</div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="contactPhone" class="form-label">شماره تماس</label>
+                                <input type="tel" id="contactPhone" class="form-control">
+                                <div class="error-message" id="phoneError">لطفاً شماره تماس معتبر وارد کنید (فقط اعداد و خط تیره)</div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="contactSubject" class="form-label">موضوع</label>
+                                <select id="contactSubject" class="form-control">
+                                    <option value="">انتخاب کنید</option>
+                                    <option value="admission">پرسش درباره ثبت‌نام</option>
+                                    <option value="courses">پرسش درباره دوره‌ها</option>
+                                    <option value="facilities">پرسش درباره امکانات</option>
+                                    <option value="other">سایر موضوعات</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="contactMessage" class="form-label required">پیام شما</label>
+                                <textarea id="contactMessage" class="form-control" rows="5" required></textarea>
+                                <div class="error-message" id="messageError">لطفاً پیام خود را وارد کنید</div>
+                            </div>
+                            
+                            <button type="submit" class="btn">ارسال پیام</button>
+                        </form>
+                    </div>
+                </div>
+                
+                <div class="map-container">
+                    <iframe src="https://balad.ir/p/1Gii85aSDG5Hmr" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- فوتر -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-about">
+                    <div class="footer-logo">
+                        <img src="images/lego.png" alt="هنرستان دکتر اکبریه">
+                    </div>
+                    <p>هنرستان دولتی دکتر اکبریه با بیش از ۲۰ سال سابقه درخشان در تربیت نیروهای متخصص و کارآمد، یکی از بهترین مراکز آموزشی فنی و حرفه‌ای در تبریز است.</p>
+                </div>
+                
+                <div class="footer-links">
+                    <h3>لینک‌های سریع</h3>
+                    <ul>
+                        <li><a href="index.html">صفحه اصلی</a></li>
+                        <li><a href="about.html">درباره ما</a></li>
+                        <li><a href="facilities.html">امکانات آموزشی</a></li>
+                        <li><a href="courses.html">رشته‌ها و دوره‌ها</a></li>
+                        <li><a href="news.html">اخبار و اطلاعیه‌ها</a></li>
+                        <li><a href="contact.html">تماس با ما</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-contact">
+                    <h3>اطلاعات تماس</h3>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt contact-icon"></i>
+                        <p>تبریز، میدان کاه‌فروشان، کوچه سید ابراهیم</p>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone contact-icon"></i>
+                        <p>041-35247208</p>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope contact-icon"></i>
+                        <p>Faniherfeiakbariye@Gmail.com</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>© هنرستان فنی و حرفه ای دکتر اکبریه</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const contactForm = document.getElementById('contactForm');
+            
+            // اعتبارسنجی فرم
+            function validateForm() {
+                let isValid = true;
+                
+                // اعتبارسنجی نام
+                const name = document.getElementById('contactName').value.trim();
+                const nameRegex = /^[\u0600-\u06FF\sA-Za-z]+$/;
+                const nameError = document.getElementById('nameError');
+                const nameGroup = document.getElementById('contactName').parentElement;
+                
+                if (!name) {
+                    nameError.textContent = 'لطفاً نام و نام خانوادگی را وارد کنید.';
+                    nameError.style.display = 'block';
+                    nameGroup.classList.add('error');
+                    isValid = false;
+                } else if (!nameRegex.test(name)) {
+                    nameError.textContent = 'نام فقط می‌تواند شامل حروف فارسی یا انگلیسی باشد.';
+                    nameError.style.display = 'block';
+                    nameGroup.classList.add('error');
+                    isValid = false;
+                } else {
+                    nameError.style.display = 'none';
+                    nameGroup.classList.remove('error');
+                }
+                
+                // اعتبارسنجی ایمیل
+                const email = document.getElementById('contactEmail').value.trim();
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                const emailError = document.getElementById('emailError');
+                const emailGroup = document.getElementById('contactEmail').parentElement;
+                
+                if (!email) {
+                    emailError.textContent = 'لطفاً پست الکترونیک را وارد کنید.';
+                    emailError.style.display = 'block';
+                    emailGroup.classList.add('error');
+                    isValid = false;
+                } else if (!emailRegex.test(email)) {
+                    emailError.textContent = 'لطفاً یک آدرس ایمیل معتبر وارد کنید.';
+                    emailError.style.display = 'block';
+                    emailGroup.classList.add('error');
+                    isValid = false;
+                } else {
+                    emailError.style.display = 'none';
+                    emailGroup.classList.remove('error');
+                }
+                
+                // اعتبارسنجی شماره تلفن (اختیاری)
+                const phone = document.getElementById('contactPhone').value.trim();
+                const phoneError = document.getElementById('phoneError');
+                const phoneGroup = document.getElementById('contactPhone').parentElement;
+                
+                if (phone && !/^[\d-]+$/.test(phone)) {
+                    phoneError.textContent = 'شماره تماس فقط می‌تواند شامل اعداد و خط تیره باشد.';
+                    phoneError.style.display = 'block';
+                    phoneGroup.classList.add('error');
+                    isValid = false;
+                } else {
+                    phoneError.style.display = 'none';
+                    phoneGroup.classList.remove('error');
+                }
+                
+                // اعتبارسنجی پیام
+                const message = document.getElementById('contactMessage').value.trim();
+                const messageError = document.getElementById('messageError');
+                const messageGroup = document.getElementById('contactMessage').parentElement;
+                
+                if (!message) {
+                    messageError.textContent = 'لطفاً پیام خود را وارد کنید.';
+                    messageError.style.display = 'block';
+                    messageGroup.classList.add('error');
+                    isValid = false;
+                } else {
+                    messageError.style.display = 'none';
+                    messageGroup.classList.remove('error');
+                }
+                
+                return isValid;
+            }
+            
+            // ارسال فرم
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                if (validateForm()) {
+                    const formData = {
+                        full_name: document.getElementById('contactName').value.trim(),
+                        email: document.getElementById('contactEmail').value.trim(),
+                        phone: document.getElementById('contactPhone').value.trim(),
+                        subject: document.getElementById('contactSubject').value,
+                        message: document.getElementById('contactMessage').value.trim()
+                    };
+                    
+                    fetch('submit_contact.php', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/x-www-form-urlencoded',
+                        },
+                        body: new URLSearchParams(formData)
+                    })
+                    .then(response => {
+                        if (!response.ok) {
+                            throw new Error('خطا در پاسخ سرور');
+                        }
+                        return response.json();
+                    })
+                    .then(data => {
+                        if (data.status === 'success') {
+                            alert(data.message);
+                            contactForm.reset();
+                        } else {
+                            throw new Error(data.message || 'خطای ناشناخته');
+                        }
+                    });
+                }
+            });
+            
+            // حذف خطاها هنگام تایپ
+            const inputs = contactForm.querySelectorAll('input, textarea, select');
+            inputs.forEach(input => {
+                input.addEventListener('input', function() {
+                    const parent = this.parentElement;
+                    parent.classList.remove('error');
+                    const errorElement = parent.querySelector('.error-message');
+                    if (errorElement) {
+                        errorElement.style.display = 'none';
+                    }
+                });
+            });
+        });
+        // وقتی صفحه کاملا بارگذاری شد
+        window.addEventListener('load', function() {
+            // پس از 1 ثانیه (برای نمایش بهتر) صفحه لودینگ را محو می‌کنیم
+            setTimeout(function() {
+                var loading = document.getElementById('loading');
+                loading.style.opacity = '0';
+                
+                // نمایش محتوای اصلی
+                document.getElementById('main-content').style.display = 'block';
+                
+                // بعد از اتمام انیمیشن محو شدن، صفحه لودینگ را حذف می‌کنیم
+                setTimeout(function() {
+                    loading.style.display = 'none';
+                }, 500);
+            }, 1000);
+        });
+
+document.addEventListener('DOMContentLoaded', function() {
+    const contactForm = document.getElementById('contactForm');
+    
+    // تنظیم محدودیت کاراکترها
+    const nameInput = document.getElementById('contactName');
+    const emailInput = document.getElementById('contactEmail');
+    const phoneInput = document.getElementById('contactPhone');
+    const messageInput = document.getElementById('contactMessage');
+    
+    // محدودیت 20 کاراکتری برای نام
+    nameInput.addEventListener('input', function() {
+        if (this.value.length > 20) {
+            this.value = this.value.substring(0, 20);
+            const errorElement = this.parentElement.querySelector('.error-message');
+            errorElement.textContent = 'نام نمی‌تواند بیشتر از 20 کاراکتر باشد';
+            errorElement.style.display = 'block';
+            this.parentElement.classList.add('error');
+        }
+    });
+    
+    // محدودیت 50 کاراکتری برای ایمیل
+    emailInput.addEventListener('input', function() {
+        if (this.value.length > 50) {
+            this.value = this.value.substring(0, 50);
+            const errorElement = this.parentElement.querySelector('.error-message');
+            errorElement.textContent = 'ایمیل نمی‌تواند بیشتر از 50 کاراکتر باشد';
+            errorElement.style.display = 'block';
+            this.parentElement.classList.add('error');
+        }
+    });
+    
+    // محدودیت 11 کاراکتری برای تلفن
+    phoneInput.addEventListener('input', function() {
+        if (this.value.length > 11 ) {
+            this.value = this.value.substring(0, 11);
+            const errorElement = this.parentElement.querySelector('.error-message');
+            errorElement.textContent = 'شماره تماس نمی‌تواند بیشتر از 11 کاراکتر باشد';
+            errorElement.style.display = 'block';
+            this.parentElement.classList.add('error');
+        }
+    });
+    
+    // محدودیت 100 کاراکتری برای پیام
+    messageInput.addEventListener('input', function() {
+        if (this.value.length > 100) {
+            this.value = this.value.substring(0, 100);
+            const errorElement = this.parentElement.querySelector('.error-message');
+            errorElement.textContent = 'پیام نمی‌تواند بیشتر از 100 کاراکتر باشد';
+            errorElement.style.display = 'block';
+            this.parentElement.classList.add('error');
+        }
+    });
+    
+    // اعتبارسنجی فرم (بقیه کدها مانند قبل)
+    function validateForm() {
+        let isValid = true;
+        
+        // اعتبارسنجی نام
+        const name = document.getElementById('contactName').value.trim();
+        const nameRegex = /^[\u0600-\u06FF\sA-Za-z]+$/;
+        const nameError = document.getElementById('nameError');
+        const nameGroup = document.getElementById('contactName').parentElement;
+        
+        if (!name) {
+            nameError.textContent = 'لطفاً نام و نام خانوادگی را وارد کنید.';
+            nameError.style.display = 'block';
+            nameGroup.classList.add('error');
+            isValid = false;
+        } else if (!nameRegex.test(name)) {
+            nameError.textContent = 'نام فقط می‌تواند شامل حروف فارسی یا انگلیسی باشد.';
+            nameError.style.display = 'block';
+            nameGroup.classList.add('error');
+            isValid = false;
+        } else if (name.length > 50) {
+            nameError.textContent = 'نام نمی‌تواند بیشتر از 50 کاراکتر باشد';
+            nameError.style.display = 'block';
+            nameGroup.classList.add('error');
+            isValid = false;
+        } else {
+            nameError.style.display = 'none';
+            nameGroup.classList.remove('error');
+        }
+        
+        // اعتبارسنجی ایمیل
+        const email = document.getElementById('contactEmail').value.trim();
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        const emailError = document.getElementById('emailError');
+        const emailGroup = document.getElementById('contactEmail').parentElement;
+        
+        if (!email) {
+            emailError.textContent = 'لطفاً پست الکترونیک را وارد کنید.';
+            emailError.style.display = 'block';
+            emailGroup.classList.add('error');
+            isValid = false;
+        } else if (!emailRegex.test(email)) {
+            emailError.textContent = 'لطفاً یک آدرس ایمیل معتبر وارد کنید.';
+            emailError.style.display = 'block';
+            emailGroup.classList.add('error');
+            isValid = false;
+        } else if (email.length > 50) {
+            emailError.textContent = 'ایمیل نمی‌تواند بیشتر از 50 کاراکتر باشد';
+            emailError.style.display = 'block';
+            emailGroup.classList.add('error');
+            isValid = false;
+        } else {
+            emailError.style.display = 'none';
+            emailGroup.classList.remove('error');
+        }
+        
+        // اعتبارسنجی شماره تلفن (اختیاری)
+        const phone = document.getElementById('contactPhone').value.trim();
+        const phoneError = document.getElementById('phoneError');
+        const phoneGroup = document.getElementById('contactPhone').parentElement;
+        
+        if (phone && !/^[\d-]+$/.test(phone)) {
+            phoneError.textContent = 'شماره تماس فقط می‌تواند شامل اعداد و خط تیره باشد.';
+            phoneError.style.display = 'block';
+            phoneGroup.classList.add('error');
+            isValid = false;
+        } else if (phone && phone.length > 11) {
+            phoneError.textContent = 'شماره تماس نمی‌تواند بیشتر از 11 کاراکتر باشد';
+            phoneError.style.display = 'block';
+            phoneGroup.classList.add('error');
+            isValid = false;
+        } else {
+            phoneError.style.display = 'none';
+            phoneGroup.classList.remove('error');
+        }
+        
+        // اعتبارسنجی پیام
+        const message = document.getElementById('contactMessage').value.trim();
+        const messageError = document.getElementById('messageError');
+        const messageGroup = document.getElementById('contactMessage').parentElement;
+        
+        if (!message) {
+            messageError.textContent = 'لطفاً پیام خود را وارد کنید.';
+            messageError.style.display = 'block';
+            messageGroup.classList.add('error');
+            isValid = false;
+        } else if (message.length > 100) {
+            messageError.textContent = 'پیام نمی‌تواند بیشتر از 100 کاراکتر باشد';
+            messageError.style.display = 'block';
+            messageGroup.classList.add('error');
+            isValid = false;
+        } else {
+            messageError.style.display = 'none';
+            messageGroup.classList.remove('error');
+        }
+        
+        return isValid;
+    }
+});
+document.addEventListener('DOMContentLoaded', function() {
+    // تنظیم شمارنده کاراکترها
+    setupCharCounter('contactName', 50, 'nameCounter');
+    setupCharCounter('contactMessage', 100, 'messageCounter');
+    
+    // اعتبارسنجی فیلدها هنگام تایپ
+    document.getElementById('contactName').addEventListener('input', validateName);
+    document.getElementById('contactMessage').addEventListener('input', validateMessage);
+    
+    // تابع تنظیم شمارنده
+    function setupCharCounter(inputId, maxLength, counterId) {
+        const input = document.getElementById(inputId);
+        const counter = document.getElementById(counterId);
+        
+        input.addEventListener('input', function() {
+            const remaining = maxLength - this.value.length;
+            counter.textContent = `${remaining}/${maxLength}`;
+            
+            // تغییر رنگ بر اساس تعداد کاراکترهای باقیمانده
+            counter.classList.remove('warning', 'error');
+            if (remaining < 10) {
+                counter.classList.add('error');
+            } else if (remaining < 30) {
+                counter.classList.add('warning');
+            }
+        });
+    }
+    
+    // اعتبارسنجی نام
+    function validateName() {
+        const nameInput = document.getElementById('contactName');
+        const nameError = document.getElementById('nameError');
+        const nameGroup = nameInput.parentElement;
+        
+        // فقط حروف فارسی، انگلیسی و فاصله مجاز است
+        nameInput.value = nameInput.value.replace(/[^\u0600-\u06FF\sA-Za-z]/g, '');
+        
+        if (/[^\u0600-\u06FF\sA-Za-z]/.test(nameInput.value)) {
+            nameError.style.display = 'block';
+            nameGroup.classList.add('error');
+        } else {
+            nameError.style.display = 'none';
+            nameGroup.classList.remove('error');
+        }
+    }
+    
+    // اعتبارسنجی پیام
+    function validateMessage() {
+        const messageInput = document.getElementById('contactMessage');
+        const messageError = document.getElementById('messageError');
+        const messageGroup = messageInput.parentElement;
+        
+        // محدودیت کاراکترهای خاص در پیام
+        const forbiddenChars = /[<>#$%^&*_=+[\]{};\\|]/g;
+        if (forbiddenChars.test(messageInput.value)) {
+            messageInput.value = messageInput.value.replace(forbiddenChars, '');
+            messageError.textContent = 'برخی کاراکترهای خاص مجاز نیستند';
+            messageError.style.display = 'block';
+            messageGroup.classList.add('error');
+        } else if (messageInput.value.length > 100) {
+            messageInput.value = messageInput.value.substring(0, 100);
+            messageError.textContent = 'حداکثر 100 کاراکتر مجاز است';
+            messageError.style.display = 'block';
+            messageGroup.classList.add('error');
+        } else {
+            messageError.style.display = 'none';
+            messageGroup.classList.remove('error');
+        }
+    }
+    
+    // اعتبارسنجی فرم هنگام ارسال
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        validateName();
+        validateMessage();
+        
+        // اگر خطایی وجود نداشت، فرم را ارسال کنید
+        if (!document.querySelectorAll('.form-group.error').length) {
+            this.submit();
+        }
+    });
+});
+    </script>
+</body>
+</html>

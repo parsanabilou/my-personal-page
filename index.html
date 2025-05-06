@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>هنرستان دولتی دکتر اکبریه</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="icon" href="images/lego.png">
+    <style>
+        /* استایل صفحه لودینگ */
+        #loading {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            z-index: 9999;
+            transition: opacity 0.5s ease;
+        }
+        
+        .loader {
+            border: 5px solid #f3f3f3;
+            border-top: 5px solid #3498db;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            animation: spin 1s linear infinite;
+            margin-bottom: 15px;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        /* محتوای اصلی که ابتدا مخفی است */
+        #main-content {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <!-- صفحه لودینگ -->
+    <div id="loading">
+        <div class="loader"></div>
+        <p>لطفا صبر کنید...</p>
+    </div>
+
+    <!-- محتوای اصلی -->
+    <div id="main-content">
+        <!-- هدر -->
+        <header class="header">
+            <div class="container header-container">
+                <div class="logo">
+                    <img src="images/lego.png" alt="هنرستان دکتر اکبریه">
+                    <div class="logo-text">
+                        <h1>هنرستان فنی و حرفه ای دکتر اکبریه</h1>
+                    </div>
+                </div>
+                
+                <i class="fas fa-bars menu-toggle"></i>
+                
+                <nav class="nav">
+                    <ul class="nav-list">
+                        <li><a href="index.html" class="nav-link active">صفحه اصلی</a></li>
+                        <li><a href="about.html" class="nav-link">درباره ما</a></li>
+                        <li><a href="facilities.html" class="nav-link">امکانات</a></li>
+                        <li><a href="courses.html" class="nav-link">رشته‌ها</a></li>
+                        <li><a href="news.html" class="nav-link">اخبار</a></li>
+                        <li><a href="contact.html" class="nav-link">تماس</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        <!-- بخش اصلی -->
+        <main>
+            <!-- بخش قهرمان -->
+            <section class="hero">
+                <div class="container">
+                    <h1 class="hero-title">به هنرستان دکتر اکبریه خوش آمدید</h1>
+                    <p class="hero-text">مرکز آموزشی پیشرفته در زمینه رشته‌های فنی و حرفه‌ای با کادری مجرب و امکانات مدرن</p>
+                    <div class="hero-buttons">
+                        <a href="contact.html" class="btn">تماس با ما</a>
+                        <a href="about.html" class="btn btn-light">درباره ما</a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- معرفی مدرسه -->
+            <section class="section">
+                <div class="container">
+                    <div class="about-content">
+                        <div class="intro-section">
+                            <div class="intro-text">
+                                <h2 class="section-title">معرفی هنرستان</h2>
+                                <p>هنرستان دولتی دکتر اکبریه با بیش از ۲۰ سال سابقه درخشان در تربیت نیروهای متخصص فنی، یکی از برترین مراکز آموزشی در سطح استان می‌باشد. این هنرستان با بهره‌گیری از کادر مجرب و امکانات آموزشی پیشرفته، محیطی ایده‌آل برای یادگیری مهارت‌های فنی فراهم کرده است.</p>
+                                <p>ما با برنامه‌ریزی دقیق آموزشی و توجه به نیازهای بازار کار، دانش‌آموزان را برای آینده‌ای درخشان آماده می‌کنیم.</p>
+                                <br>
+                                <a href="about.html" class="btn">بیشتر بدانید</a>
+                            </div>
+                            <br>
+                            <div class="intro-image">
+                                <img src="images/Screenshot 2025-04-11 193930.png" alt="کلاس‌های هنرستان" class="history-img">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- امکانات -->
+            <section class="section bg-light">
+                <div class="container">
+                    <h2 class="section-title">امکانات آموزشی</h2>
+                    <div class="grid grid-auto">
+                        <div class="card">
+                            <img src="images/Screenshot 2025-04-11 194131.png" alt="کلاس‌های هنرستان" class="history-img">
+                            <div class="card-body">
+                                <h3 class="card-title">آزمایشگاه‌های مجهز</h3>
+                                <p>آزمایشگاه‌های تخصصی برق، الکترونیک و کامپیوتر با جدیدترین تجهیزات</p>
+                                <a href="facilities.html" class="btn">مشاهده جزئیات</a>
+                            </div>
+                        </div>
+                        <br>
+                        
+                        <div class="card">
+                            <img src="images/photo_2025-04-12_18-18-16.jpg" alt="کتابخانه" class="history-img">
+                            <div class="card-body">
+                                <h3 class="card-title">کتابخانه تخصصی</h3>
+                                <p>کتابخانه با بیش از ۱۰۰۰ جلد کتاب در زمینه‌های فنی و عمومی</p>
+                                <a href="facilities.html" class="btn">مشاهده جزئیات</a>
+                            </div>
+                        </div>
+                        <br>
+                        
+                        <div class="card">
+                            <img src="images/Screenshot 2025-04-11 195102.png" alt="کلاس‌های هنرستان" class="history-img">
+                            <div class="card-body">
+                                <h3 class="card-title">سالن ورزشی</h3>
+                                <p>سالن ورزشی سرپوشیده با امکانات کامل برای ورزش‌های مختلف</p>
+                                <a href="facilities.html" class="btn">مشاهده جزئیات</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- اخبار -->
+            <section class="section">
+                <div class="container">
+                    <h2 class="section-title">آخرین اخبار</h2>
+                    <div class="grid grid-auto">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="news-meta">
+                                    <i class="far fa-calendar-alt"></i>
+                                    <span>۱۴۰۳/۰۹/۱۰</span>
+                                </div>
+                                <h3 class="card-title">کسب مقام اول درمسابقه فوتسال</h3>
+                                <p>تیم دانش‌آموزی هنرستان دکتر اکبریه در مسابقات فوتسال بین مدارس مقام اول را کسب کرد.</p>
+                                <a href="news.html" class="btn">مشاهده خبر</a>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="news-meta">
+                                    <i class="far fa-calendar-alt"></i>
+                                    <span>۱۴۰۲/۰۵/۲۰</span>
+                                </div>
+                                <h3 class="card-title">برگزاری مسابقات علمی</h3>
+                                <p>مسابقات علمی سالانه هنرستان در رشته‌های مختلف برگزار خواهد شد.</p>
+                                <a href="news.html" class="btn">مشاهده خبر</a>
+                            </div>
+                        </div>
+                        <br>
+                        
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="news-meta">
+                                    <i class="far fa-calendar-alt"></i>
+                                    <span>۱۴۰۲/۰۵/۱۵</span>
+                                </div>
+                                <h3 class="card-title">افتتاح کتابخانه جدید</h3>
+                                <p>کتابخانه جدید هنرستان با بیش از ۵۰۰ جلد کتاب تخصصی افتتاح شد.</p>
+                                <a href="news.html" class="btn">مشاهده خبر</a>
+                            </div>
+                        </div>
+                        <br>
+                    </div>
+                    <div class="text-center" style="margin-top: 30px;">
+                        <a href="news.html" class="btn">مشاهده همه اخبار</a>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- فوتر -->
+        <footer class="footer">
+            <div class="container">
+                <div class="footer-grid">
+                    <div class="footer-about">
+                        <div class="footer-logo">
+                            <img src="images/lego.png" alt="هنرستان دکتر اکبریه">
+                        </div>
+                        <p>هنرستان فنی و حرفه ای دکتر اکبریه با بیش از ۲۰ سال سابقه درخشان در تربیت نیروهای متخصص و کارآمد، یکی از بهترین مراکز آموزشی فنی و حرفه‌ای در تبریز است.</p>
+                    </div>
+                    
+                    <div class="footer-links">
+                        <h3>لینک‌های سریع</h3>
+                        <ul>
+                            <li><a href="index.html">صفحه اصلی</a></li>
+                            <li><a href="about.html">درباره ما</a></li>
+                            <li><a href="facilities.html">امکانات آموزشی</a></li>
+                            <li><a href="courses.html">رشته‌ها و دوره‌ها</a></li>
+                            <li><a href="news.html">اخبار و اطلاعیه‌ها</a></li>
+                            <li><a href="contact.html">تماس با ما</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-contact">
+                        <h3>اطلاعات تماس</h3>
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt contact-icon"></i>
+                            <p>تبریز، میدان کاه‌فروشان، کوچه سید ابراهیم</p>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone contact-icon"></i>
+                            <p>041-35247208</p>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope contact-icon"></i>
+                            <p>Fanihefeiakbariye@Gmail.com</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="copyright">
+                    <p>© هنرستان فنی و حرفه ای دکتر اکبریه</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        // وقتی صفحه کاملا بارگذاری شد
+        window.addEventListener('load', function() {
+            // پس از 1 ثانیه (برای نمایش بهتر) صفحه لودینگ را محو می‌کنیم
+            setTimeout(function() {
+                var loading = document.getElementById('loading');
+                loading.style.opacity = '0';
+                
+                // نمایش محتوای اصلی
+                document.getElementById('main-content').style.display = 'block';
+                
+                // بعد از اتمام انیمیشن محو شدن، صفحه لودینگ را حذف می‌کنیم
+                setTimeout(function() {
+                    loading.style.display = 'none';
+                }, 500);
+            }, 1000);
+        });
+    </script>
+    <script src="js/main.js"></script>
+</body>
+</html>

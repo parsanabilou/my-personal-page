@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>درباره ما | هنرستان دکتر اکبریه</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="icon" href="images\lego.png">
+</head>
+<style>
+    /* استایل صفحه لودینگ */
+    #loading {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            z-index: 9999;
+            transition: opacity 0.5s ease;
+        }
+        
+        .loader {
+            border: 5px solid #f3f3f3;
+            border-top: 5px solid #3498db;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            animation: spin 1s linear infinite;
+            margin-bottom: 15px;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        /* محتوای اصلی که ابتدا مخفی است */
+        #main-content {
+            display: none;
+        }
+</style>
+<body>
+            <!-- صفحه لودینگ -->
+            <div id="loading">
+                <div class="loader"></div>
+                <p>لطفا صبر کنید...</p>
+            </div>
+        
+            <!-- محتوای اصلی -->
+            <div id="main-content">
+    <!-- هدر (همانند index.html) -->
+    <header class="header">
+        <div class="container header-container">
+            <div class="logo">
+                <img src="images\lego.png" alt="هنرستان دکتر اکبریه">
+                <div class="logo-text">
+                    <h1>هنرستان فنی و حرفه ای دکتر اکبریه</h1>
+                </div>
+            </div>
+            
+            <i class="fas fa-bars menu-toggle"></i>
+            
+            <nav class="nav">
+                <ul class="nav-list">
+                    <li><a href="index.html" class="nav-link">صفحه اصلی</a></li>
+                    <li><a href="about.html" class="nav-link active">درباره ما</a></li>
+                    <li><a href="facilities.html" class="nav-link">امکانات</a></li>
+                    <li><a href="courses.html" class="nav-link">رشته‌ها</a></li>
+                    <li><a href="news.html" class="nav-link">اخبار</a></li>
+                    <li><a href="contact.html" class="nav-link">تماس</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- محتوای صفحه درباره ما -->
+    <main>
+        <section class="section">
+            <div class="container">
+                <h2 class="section-title">تاریخچه هنرستان</h2>
+                <div class="about-content">
+                    <div class="intro-section">
+                        <div class="intro-text">
+                            <p>هنرستان دکتر اکبریه در سال ۱۳۷۵ با هدف تربیت نیروهای متخصص و کارآمد در رشته‌های فنی و حرفه‌ای تأسیس شد. این هنرستان که به نام دکتر محمد اکبریه، استاد برجسته رشته‌های فنی نامگذاری شده است، از ابتدا با بهره‌گیری از کادر مجرب و امکانات آموزشی پیشرفته، به یکی از مراکز آموزشی معتبر در سطح استان تبدیل شده است.</p>
+                            <p>در طول بیش از دو دهه فعالیت، هنرستان دکتر اکبریه موفق به تربیت هزاران فارغ‌التحصیل شده که بسیاری از آن‌ها امروز در موقعیت‌های شغلی مهم و تأثیرگذار مشغول به کار هستند. این هنرستان همواره در مسابقات علمی و مهارتی در سطح استانی و کشوری خوش درخشیده است.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ماموریت و چشم‌انداز -->
+        <section class="section bg-light">
+            <div class="container">
+                <h2 class="section-title">ماموریت و چشم‌انداز</h2>
+                <div class="grid grid-2">
+                    <div class="about-content">
+                        <h3>ماموریت ما</h3>
+                        <p>تربیت نیروهای متخصص، خلاق و مسئولیت‌پذیر با تأکید بر آموزش‌های مهارتی و کاربردی متناسب با نیازهای روز بازار کار و پیشرفت‌های تکنولوژیک.</p>
+                    </div>
+                    
+                    <div class="about-content">
+                        <h3>چشم‌انداز ما</h3>
+                        <p>تبدیل شدن به الگوی برتر هنرستان‌های فنی و حرفه‌ای در سطح کشور با استانداردهای آموزشی بین‌المللی و تولید نیروی انسانی ماهر برای توسعه صنعتی کشور.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- کادر آموزشی -->
+        <section class="section">
+            <div class="container">
+                <h2 class="section-title">کادر آموزشی</h2>
+                <div class="grid grid-auto">
+                    <div class="card">
+                        <div class="card-body">
+                            <h3 class="card-title">مهندس یعقوب قلیزاده</h3>
+                            <p>مدیر هنرستان</p>
+                            <p>لیسانس مهندسی معماری</p>
+                        </div>
+                    </div><br>
+                    
+                    <div class="card">
+
+                        <div class="card-body">
+                            <h3 class="card-title">مهندس مهدی حسام نیا </h3>
+                            <p>معاون فنی</p>
+                            <p>کارشناسی ارشد مهندسی برق</p>
+                        </div>
+                    </div><br>
+
+                    <div class="card">
+
+                        <div class="card-body">
+                            <h3 class="card-title">مهندس حامد صمیمی   </h3>
+                            <p>سرپرست بخش</p>
+                            <p> لیسانس مهندسی کامپیوتر</p>
+                        </div>
+                    </div><br>
+
+                    <div class="card">
+
+                        <div class="card-body">
+                            <h3 class="card-title">مهندس لطف اله علیپور    </h3>
+                            <p>سرپرست بخش</p>
+                            <p> سرپرست بخش</p>
+                        </div>
+                    </div><br>
+                    
+                    <div class="card">
+                        <div class="card-body">
+                            <h3 class="card-title">مهندس مهدی مهدیان </h3>
+                            <p>معاون پرورشی </p>
+                            <p>کارشناسی ارشد معماری</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <!-- فوتر -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-about">
+                    <div class="footer-logo">
+                        <img src="images\lego.png" alt="هنرستان دکتر اکبریه">
+                    </div>
+                    <p>هنرستان دکتر اکبریه با بیش از ۲۰ سال سابقه درخشان در تربیت نیروهای متخصص و کارآمد، یکی از بهترین مراکز آموزشی فنی و حرفه‌ای در تبریز است.</p>
+                </div>
+                
+                <div class="footer-links">
+                    <h3>لینک‌های سریع</h3>
+                    <ul>
+                        <li><a href="index.html">صفحه اصلی</a></li>
+                        <li><a href="about.html">درباره ما</a></li>
+                        <li><a href="facilities.html">امکانات آموزشی</a></li>
+                        <li><a href="courses.html">رشته‌ها و دوره‌ها</a></li>
+                        <li><a href="news.html">اخبار و اطلاعیه‌ها</a></li>
+                        <li><a href="contact.html">تماس با ما</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-contact">
+                    <h3>اطلاعات تماس</h3>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt contact-icon"></i>
+                        <p>تبریز، میدان کاه‌فروشان، کوچه سید ابراهیم</p>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone contact-icon"></i>
+                        <p>041-35247208</p>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope contact-icon"></i>
+                        <p>Faniherfeiakbariye@Gmail.com</p>
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>© هنرستان فنی و حرفه ای دکتر اکبریه </p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script>
+        // وقتی صفحه کاملا بارگذاری شد
+        window.addEventListener('load', function() {
+            // پس از 1 ثانیه (برای نمایش بهتر) صفحه لودینگ را محو می‌کنیم
+            setTimeout(function() {
+                var loading = document.getElementById('loading');
+                loading.style.opacity = '0';
+                
+                // نمایش محتوای اصلی
+                document.getElementById('main-content').style.display = 'block';
+                
+                // بعد از اتمام انیمیشن محو شدن، صفحه لودینگ را حذف می‌کنیم
+                setTimeout(function() {
+                    loading.style.display = 'none';
+                }, 500);
+            }, 1000);
+        });
+    </script>
+</body>
+</html>
